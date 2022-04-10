@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lm1-wL-2HV">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View-->
+        <!--Set API-->
         <scene sceneID="wnD-oF-eoh">
             <objects>
                 <collectionViewController id="5sq-HL-ChQ" customClass="MainView" customModule="NetworkCalalog" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,20 +58,27 @@
                             <outlet property="delegate" destination="5sq-HL-ChQ" id="WDu-fd-Zrl"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Klk-ID-QDd"/>
+                    <navigationItem key="navigationItem" title="Set API" id="Klk-ID-QDd"/>
+                    <connections>
+                        <segue destination="Jjg-8G-6bN" kind="show" identifier="mainToTable" id="Wsz-5D-Mgw"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxu-n1-Lwr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="122.54464285714285"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View-->
         <scene sceneID="Jcr-lz-EXf">
             <objects>
-                <tableViewController id="Jjg-8G-6bN" sceneMemberID="viewController">
+                <tableViewController id="Jjg-8G-6bN" customClass="TableView" customModule="NetworkCalalog" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kEd-0i-biv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="qR5-ao-UfE">
+                            <rect key="frame" x="0.0" y="110.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LZs-Oz-Cix">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -87,6 +94,10 @@
                             <outlet property="delegate" destination="Jjg-8G-6bN" id="25Y-9R-7Ew"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="ZZQ-ai-HNX"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="qR5-ao-UfE" id="esA-RE-AgJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LD-qb-R8o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

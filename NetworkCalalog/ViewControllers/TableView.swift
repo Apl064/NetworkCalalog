@@ -9,9 +9,16 @@ import UIKit
 
 class TableView: UITableViewController {
 
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

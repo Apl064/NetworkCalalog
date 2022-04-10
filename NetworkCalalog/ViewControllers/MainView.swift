@@ -11,6 +11,7 @@ class MainView: UICollectionViewController {
 
     let nameAPIs = NameAPI.allCases
     
+    //MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         nameAPIs.count
     }
@@ -26,6 +27,14 @@ class MainView: UICollectionViewController {
         cell.apiRequestLabel.text = nameAPIs[indexPath.item].rawValue
         
         return cell
+    }
+    
+    //MARK: - UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let nameAPI = nameAPIs[indexPath.item]
+        switch nameAPI {
+        case .api_1: performSegue(withIdentifier: "mainToTable", sender: nil)
+        }
     }
 }
 
