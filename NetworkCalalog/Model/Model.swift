@@ -7,16 +7,11 @@
 
 import Foundation
 
-struct Makeup {
+struct Makeup: Decodable {
     let id: Int
     let brand: String
     let name: String
     let price: Double
-    let image_link: String
-    let description: String
-    let product_type: String
-    
-    static func Makeup() -> [Makeup] {
-        return []
-    }
+    let image_link: String?
+    let description: String?
 }

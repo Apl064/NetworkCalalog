@@ -8,7 +8,16 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+    
+   
 
+    @IBOutlet var idLabel: UILabel!
+    @IBOutlet var brandLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var descLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
