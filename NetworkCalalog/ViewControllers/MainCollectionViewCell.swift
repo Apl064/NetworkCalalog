@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewCell: UICollectionViewCell {
+class MainCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var apiRequestLabel: UILabel!
     
